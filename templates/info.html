@@ -1,0 +1,95 @@
+{%load static%}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Donate</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
+	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
+</head>
+
+<body> 
+
+	<div class="container">
+	
+		<div class="placeholder">
+			<div class="parallax-window" data-parallax="scroll" data-image-src="{% static 'images/theam.jpg' %}">
+				<div class="tm-header">
+					<div class="row tm-header-inner">
+						<div class="col-md-6 col-12">
+							<alt="Logo" class="tm-site-logo" /> 
+							<div class="tm-site-text-box">
+								<h1 class="tm-site-title">Secret Angel</h1>
+								<h6 class="tm-site-description">Help others get a good life</h6>	
+							</div>
+						</div>
+						<nav class="col-md-6 col-12 tm-nav">
+							<ul class="tm-nav-ul">
+								<li class="tm-nav-li"><a href="/" class="tm-nav-link active">Home</a></li>
+								<li class="tm-nav-li"><a href="about" class="tm-nav-link">About</a></li>
+								<li class="tm-nav-li"><a href="contact" class="tm-nav-link">Contact</a></li>
+							</ul>
+						</nav>	
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main>
+			<header class="row tm-welcome-section">
+				<h2 class="col-12 text-center tm-section-title">Welcome</h2>
+				<p class="col-12 text-center">In keeping with its philosophy of 'Real Work Real Change',H.O.T, an organization in Noida, India to support the underserved, has taken its intervention into the interiors of India, reaching the unreached in the remotest of rural areas and urban slums with our services and making this helping foundation in India, the best NGO in India.</p>
+			</header>
+			
+			
+
+			
+			
+			<div class="row tm-gallery">
+				
+				{% for test in tests %}
+				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="{% static 'images/slide1.jpg' %} " alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">{{test.username}}</h4>
+								<p class="tm-gallery-title">ID- {{test.id}}</p>
+								<p class="tm-gallery-description">{{test.des}}</p>
+								<p class="tm-gallery-description">{{test.email}}</p>
+								<a class="lol" type="submit" href="payment"><i>Donate Now(Money)</i></a><br>
+								<a class="lol" type="submit" href="payment2"><i>Donate Now(other mean)</i></a>
+							</figcaption>
+						</figure>
+					</article>
+					{% endfor %}
+			</div>
+			
+		</main>
+
+		<footer class="tm-footer text-center">
+			<p>Copyright &copy; 2021 Brute-force </p>
+		</footer>
+	</div>
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/parallax.min.js' %}"></script>
+	<script>
+		$(document).ready(function(){
+			
+			$('.tm-paging-link').click(function(e){
+				e.preventDefault();
+				
+				var page = $(this).text().toLowerCase();
+				$('.tm-gallery-page').addClass('hidden');
+				$('#tm-gallery-page-' + page).removeClass('hidden');
+				$('.tm-paging-link').removeClass('active');
+				$(this).addClass("active");
+			});
+		});
+	</script>
+</body>
+</html>

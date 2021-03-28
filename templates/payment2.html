@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Secret Angel </title>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
+</head>
+<header>
+	<img class="logo" src="{% static 'images/end-poverty-logo.jpg' %}">
+	<nav>
+		<ul class="navlink">
+			<li ><a href='/'>Home</a> </li>
+			<li><a href='register'>Register</a> </li>
+			<li><a href="contact">Contact Us</a> </li>
+		</ul>
+	</nav>
+	<a href='accounts/donator'> <img class="login_img" src="{% static 'images/login_img.png' %}"></a>
+</header>
+<br><br><br>
+<br><br><br>
+<header class="row tm-welcome-section">
+    <h2 class="col-12 text-center tm-section-title">why to donate books/cloths</h2>
+    <h4 class="col-12 text-center">It’s much better for the environment<br>It helps people in need<br>It will give you an ego boost</h4>
+</header>
+
+
+<body style="background-color: azure;">
+    <div class="row tm-gallery">		
+        <div id="tm-gallery-page-pizza" class="tm-gallery-page">
+            <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+                <figure>
+                    <img src="{% static 'images/slide1.jpg' %} " alt="Image" class="img-fluid tm-gallery-img" />
+                    <figcaption>
+                        <h4 class="tm-gallery-title">Donate Books</h4>
+                        <p class="tm-gallery-description">Books of all kind is excepted</p>
+                        <!-- <p class="tm-gallery-description"></p> -->
+                        <button >donate now</button>
+                    </figcaption>
+                </figure>
+            </article>
+      </div>
+    </div>
+</body>
+</html>
